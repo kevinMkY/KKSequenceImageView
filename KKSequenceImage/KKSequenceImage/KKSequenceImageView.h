@@ -20,13 +20,30 @@
 
 @interface KKSequenceImageView : UIImageView
 
-@property (nonatomic, assign) NSUInteger durationMS; //MS
-@property (nonatomic, assign) int repeatCount;
+/*
+ * 每一张图的间隔,单位是MS
+ */
+@property (nonatomic, assign) NSUInteger durationMS;
+/*
+ * 重复播放次数
+ */
+@property (nonatomic, assign) NSUInteger repeatCount;
+/*
+ * 图片地址数组,这个地址将被用于imageWithContentsOfFile的方式获取图片
+ */
 @property (nonatomic, strong) NSArray<NSString *> *imagePathss;
-@property (nonatomic, assign) BOOL animatingNow;
+/*
+ * 是否正在播放动画中
+ */
+@property (nonatomic, assign, readonly) BOOL animatingNow;
+/*
+ * 代理
+ */
 @property (nonatomic, weak)   id<KKSequenceImageDelegate> delegate;
 
-- (void) begin;
-- (void) clean;
+/*
+ * 开始动画
+ */
+- (void)begin;
 
 @end

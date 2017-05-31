@@ -18,6 +18,7 @@ typedef BOOL (^CompletionBlock)(NSUInteger index);
 @property (nonatomic, strong) dispatch_queue_t _Nonnull queue;
 @property (nonatomic, strong) UIImage *nextImage;
 @property (nonatomic, assign) NSInteger currentCompletionCount;
+@property (nonatomic, assign) BOOL animatingNow;
 
 @end
 
